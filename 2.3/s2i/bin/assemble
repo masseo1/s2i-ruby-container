@@ -69,3 +69,13 @@ set +e
 [[ -d ./tmp ]] && chgrp -R 0 ./tmp && chmod -R g+rw ./tmp
 [[ -d ./db ]] && chgrp -R 0 ./db && chmod -R g+rw ./db
 set -e
+
+###### use YARN or npm
+if [ ! -z "$YARN_ENABLED" ]; then
+ echo "---> Using 'yarn install' with YARN_ARGS"
+ yarn install $YARN_ARGS
+else
+ echo "---> Using 'npm install'"
+ npm install -s
+fi
+
