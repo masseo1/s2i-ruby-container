@@ -43,8 +43,6 @@ RUN chown -R 1001:0 /opt/app-root && chmod -R ug+rwx /opt/app-root
 # Reset permissions of filesystem to default values
 RUN rpm-file-permissions
 
-### Install Yar, with NPM:
-npm install -g yarn -s &>/dev/null
 
 USER 1001
 
